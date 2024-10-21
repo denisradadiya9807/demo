@@ -1,0 +1,15 @@
+{
+    "launch": {
+
+
+
+        "configurations": [],
+        "compounds": []
+    },
+    "json.schemas": [
+
+    ],
+    "workbench.editor.enablePreviewFromCodeNavigation": false,
+    "editor.suggest.preview": false,
+    "workbench.editor.enablePreview": false
+}

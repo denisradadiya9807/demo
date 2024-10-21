@@ -1,0 +1,20 @@
+et mailTransporter = nodemailer.createTransport({
+service: 'gmail',
+auth: {
+user: process.env.EMAIL,
+pass: process.env.PASSWORD
+}
+});
+let mailDetails = {
+from: process.env.EMAIL,
+to: process.env.ORDER_NOTIFICATION_EMAIL,
+subject: 'New Order Placed By User',
+html: `Order MongoID : ${newOrder._id.toString()} - orderId : ${orderId} - deliverAt : ${deliverAt}`
+};
+mailTransporter.sendMail(mailDetails, function (error, data) {
+if (error) {
+return responseManager.onError(error, res);
+ } else {
+return responseManager.onSuccess('Order placed successfully...', newOrder, res);
+}
+ });
